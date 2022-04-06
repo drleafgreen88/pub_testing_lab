@@ -11,9 +11,13 @@ class Customer:
     def remove_money(self, price):
         self.wallet >= price
 
-    def buy_drink(self, input_drink):
-        self.drinks.append(input_drink)
+    def buy_drink(self, input_drink, input_pub):
+        self.drinks.append(input_drink.name)
         self.drunk_lvl += input_drink.alcohol_level
+        print(input_pub.stock[input_drink.name][0])
+        # for drink in input_pub.stock:
+        #     if drink == input_drink.name:
+
         # for choice in self.drinks:
         #     if choice == input_drink:
         #         self.drunk_lvl += choice.alcohol_level

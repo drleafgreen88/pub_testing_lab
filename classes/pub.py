@@ -1,8 +1,8 @@
 class Pub:
-    def __init__(self, input_name, input_till):
+    def __init__(self, input_name, input_till, input_drinks):
         self.name = input_name
         self.till = input_till
-        self.drinks = ["Jack Daniels", "Baileys", "Beer"]
+        self.drinks = input_drinks
 
     def add_money(self, price):
         self.till += price
@@ -14,3 +14,5 @@ class Pub:
     def customer_drunkenness(self, alcohol_level):
         if alcohol_level >= 10:
             print("No more tonight buddy")
+
+    # def stock_check(self)

@@ -8,7 +8,10 @@ class TestCustomer(unittest.TestCase):
     def setUp(self):
         self.customer = Customer("Stuart", 100, 18)
         self.drink =  Drink("Jack Daniels", 1.50, 3)
-        self.pub = Pub("Prancing Pony", 1000, )
+        self.pub = Pub("Prancing Pony", 1000, {"Jack Daniels" : [1.50, 3],
+        "Baileys": [2.00, 2.5],
+        "Beer": [1, 2]
+        })
         self.food = Food("Pie", 5, 2)
 
     def test_customer_has_name(self):
@@ -23,7 +26,7 @@ class TestCustomer(unittest.TestCase):
 
     #could replace the list with a dictionary and remove a drink with each transaction
     def test_customer_buys_drink(self):
-        self.customer.buy_drink(self.drink)
+        self.customer.buy_drink(self.drink, self.pub)
         self.assertEqual(1, len(self.customer.drinks))
 
     #
