@@ -22,3 +22,6 @@ class Customer:
         # for choice in Drink.drink_dict:
         #     if input_drink == input_drink:
         #         self.drunk_lvl += choice
+    def buy_food(self, input_food):
+        self.drunk_lvl -= input_food.rejuvenation_level
+        print(self.drunk_lvl)
